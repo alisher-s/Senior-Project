@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp"
-        android:background="@android:color/white"
+        android:background="@color/white"
         android:elevation="6dp"
         android:gravity="center_horizontal"
         android:layout_marginTop="32dp"
@@ -78,7 +78,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
             android:paddingVertical="12dp"
-            app:backgroundTint="#513992"
+            app:backgroundTint="#37BEE2"
             android:text="@string/login"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
@@ -92,7 +92,7 @@
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
-            android:text="Register now?"
+            android:text="@string/register_now"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>

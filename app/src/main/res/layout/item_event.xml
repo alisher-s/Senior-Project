@@ -45,7 +45,7 @@
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
+            tools:text="Free"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -56,33 +56,80 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:shadowColor="#000000"
             android:shadowDy="2"
             android:shadowRadius="4"
-            app:layout_constraintBottom_toTopOf="@id/eventLocation"
+            tools:text="Event Title"
+            app:layout_constraintBottom_toTopOf="@id/dateContainer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <TextView
-            android:id="@+id/eventLocation"
+        <LinearLayout
+            android:id="@+id/dateContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toTopOf="@id/locationContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_calendar_white"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:id="@+id/eventDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textColor="@android:color/white"
+                android:shadowColor="#000000"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:textSize="12sp"
+                tools:text="March 11 15:00"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/locationContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:drawableStart="@drawable/ic_location_on_white"
-            android:drawablePadding="4dp"
+            android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:textColor="@android:color/white"
-            android:shadowColor="#000000"
-            android:shadowDy="1"
-            android:shadowRadius="2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_location_on_white"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:id="@+id/eventLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textColor="@android:color/white"
+                android:shadowColor="#000000"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:textSize="12sp"
+                tools:text="Orange Hall"/>
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -1,19 +1,28 @@
 package com.example.seniorproject
 
+import android.app.Dialog
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.seniorproject.databinding.ActivityEventsBinding
 
 class EventsActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityEventsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_events)
 
-        val recycler = findViewById<RecyclerView>(R.id.eventsRecycler)
+        binding = ActivityEventsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        recycler.layoutManager = GridLayoutManager(this, 2)
+        binding.eventsRecycler.layoutManager = GridLayoutManager(this, 2)
 
         val events = listOf(
             Event(R.drawable.img1, "Nomad Talks", "March 11 15:00", "Orange Hall", "free", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus dui nec risus."),
@@ -32,6 +41,43 @@ class EventsActivity : AppCompatActivity() {
             Event(R.drawable.img14, "Общество Мертвых Мечт", "April 6 18:00", "Main Hall", "free", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus dui nec risus."),
         )
 
-        recycler.adapter = EventAdapter(events)
+        val adapter = EventAdapter(events)
+        binding.eventsRecycler.adapter = adapter
+
+
+        adapter.onItemClick = { event ->
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.dialog_event_details)
+
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+
+            val imageView = dialog.findViewById<ImageView>(R.id.dialogEventImage)
+            val titleView = dialog.findViewById<TextView>(R.id.dialogEventTitle)
+            val dateView = dialog.findViewById<TextView>(R.id.dialogEventDate)
+            val locationView = dialog.findViewById<TextView>(R.id.dialogEventLocation)
+            val descriptionView = dialog.findViewById<TextView>(R.id.dialogEventDescription)
+
+            val backButton = dialog.findViewById<Button>(R.id.backButton)
+            val bookTicketButton = dialog.findViewById<Button>(R.id.bookTicketButton)
+
+            backButton.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            bookTicketButton.setOnClickListener {
+                val intent = Intent(this, QueueActivity::class.java)
+                startActivity(intent)
+            }
+
+            imageView.setImageResource(event.imageResId)
+            titleView.text = event.title
+            dateView.text = event.date
+            locationView.text = event.location
+            descriptionView.text = event.description
+
+            dialog.show()
+        }
+
     }
 }

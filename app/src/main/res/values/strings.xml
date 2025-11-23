@@ -49,4 +49,7 @@
     <string name="login">Login</string>
     <string name="registration_form">Registration</string>
     <string name="register">Register</string>
+    <string name="event_image">Event Image</string>
+    <string name="register_now">Register now?</string>
+    <string name="events">Events</string>
 </resources>
