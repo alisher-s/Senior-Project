@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.text.InputType
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.seniorproject.R
 
 class RegistrationActivity : AppCompatActivity() {
 

@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-    <!-- Event Title -->
     <TextView
         android:id="@+id/dialogEventTitle"
         android:layout_width="wrap_content"
@@ -16,7 +15,6 @@
         android:textStyle="bold"
         tools:text="Event Title" />
 
-    <!-- Date -->
     <TextView
         android:id="@+id/dialogEventDate"
         android:layout_width="wrap_content"
@@ -28,7 +26,6 @@
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         tools:text="Event Date" />
 
-    <!-- Location -->
     <TextView
         android:id="@+id/dialogEventLocation"
         android:layout_width="wrap_content"
@@ -40,7 +37,6 @@
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         tools:text="Event Location" />
 
-    <!-- Price -->
     <TextView
         android:id="@+id/dialogEventPrice"
         android:layout_width="wrap_content"
@@ -52,7 +48,6 @@
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         tools:text="Event Price" />
 
-    <!-- Divider -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -60,7 +55,6 @@
         android:layout_marginBottom="16dp"
         android:background="?android:attr/listDivider" />
 
-    <!-- Description -->
     <TextView
         android:id="@+id/dialogEventDescription"
         android:layout_width="wrap_content"

@@ -2,7 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFEFEF"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_gradient"
     android:padding="24dp">
 
     <LinearLayout
@@ -68,16 +70,19 @@
             android:text="@string/show_password"
             android:layout_marginTop="12dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="#022FFA"
-            android:text="@string/register"
+            android:layout_marginBottom="10dp"
+            android:paddingVertical="12dp"
+            app:backgroundTint="#513992"
+            android:text="@string/login"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
     </LinearLayout>
 </ScrollView>

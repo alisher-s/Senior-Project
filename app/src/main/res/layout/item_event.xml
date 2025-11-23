@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Main Event Image -->
         <ImageView
             android:id="@+id/eventImage"
             android:layout_width="0dp"
@@ -23,9 +22,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            tools:src="@tools:sample/backgrounds/scenic"/>
 
-        <!-- A semi-transparent gradient overlay for better text readability -->
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -35,7 +33,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <!-- Event Price -->
         <TextView
             android:id="@+id/eventPrice"
             android:layout_width="wrap_content"
@@ -50,10 +47,8 @@
             android:textColor="@android:color/white"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="от 15000" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!-- Event Title -->
         <TextView
             android:id="@+id/eventTitle"
             android:layout_width="0dp"
@@ -69,10 +64,8 @@
             android:shadowRadius="4"
             app:layout_constraintBottom_toTopOf="@id/eventLocation"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Мировой тур Ennio Morricone в Алматы" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!-- Event Location -->
         <TextView
             android:id="@+id/eventLocation"
             android:layout_width="0dp"
@@ -89,8 +82,7 @@
             android:shadowRadius="2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Дворец Республики" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

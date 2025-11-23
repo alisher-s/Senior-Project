@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.compose.ui.semantics.text
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -41,36 +40,30 @@ class EventAdapter(private val events: List<Event>) :
         val event = events[position]
         holder.eventImage.setImageResource(event.imageResId)
         holder.eventTitle.text = event.title
-        holder.eventLocation.text = event.location // Corrected to use 'place' from Event.kt
+        holder.eventLocation.text = event.location
         holder.eventPrice.text = event.price
     }
 
     override fun getItemCount() = events.size
 
     private fun showEventDetailsDialog(context: Context, event: Event) {
-        // Inflate the custom layout
         val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_event_details, null)
 
-        // Find views in the dialog layout
         val title = dialogView.findViewById<TextView>(R.id.dialogEventTitle)
         val date = dialogView.findViewById<TextView>(R.id.dialogEventDate)
         val location = dialogView.findViewById<TextView>(R.id.dialogEventLocation)
         val price = dialogView.findViewById<TextView>(R.id.dialogEventPrice)
         val description = dialogView.findViewById<TextView>(R.id.dialogEventDescription)
 
-        // Set the event data to the views
         title.text = event.title
         date.text = event.date
         location.text = event.location
         price.text = event.price
         description.text = event.description
 
-        // Build and show the dialog
         MaterialAlertDialogBuilder(context)
             .setView(dialogView)
             .setPositiveButton("Book Ticket") { dialog, _ ->
-                // This is where you would handle the booking action.
-                // For now, we'll just show a simple message.
                 Toast.makeText(context, "Booking for \"${event.title}\"...", Toast.LENGTH_SHORT).show()
                 dialog.dismiss()
             }
