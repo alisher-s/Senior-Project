@@ -1,5 +1,7 @@
 package com.example.seniorproject
 
+import android.media.Image
+
 data class Event(
     val imageResId: Int,
     val title: String,

@@ -82,16 +82,14 @@
             android:textColor="@android:color/white"
             android:textSize="18sp"
             tools:ignore="DuplicateSpeakableTextCheck" />
-
         <TextView
             android:id="@+id/registration"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
             android:text="Register now?"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </LinearLayout>
 </ScrollView>

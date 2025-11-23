@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.InputType
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.seniorproject.R
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -36,8 +37,6 @@ class RegistrationActivity : AppCompatActivity() {
                 email.error = "Email must end with @nu.edu.kz"
                 return@setOnClickListener
             }
-
-
 
             if (passText.length < 6) {
                 password.error = "Password must be at least 6 characters"

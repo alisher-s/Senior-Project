@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.compose.ui.semantics.text
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -21,7 +22,7 @@ class EventAdapter(private val events: List<Event>) :
 
         init {
             itemView.setOnClickListener {
-                val position = bindingAdapterPosition
+                val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     val clickedEvent = events[position]
                     showEventDetailsDialog(itemView.context, clickedEvent)
